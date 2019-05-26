@@ -7,7 +7,7 @@ import Typography from "@material-ui/core/Typography";
 const styles = theme => ({
   div: {
     backgroundCcolor: "#FF4136",
-    width: "99%",
+    width: "100%",
     height: "30px",
     margin: "auto",
     // transform: "translate(-50%, -50%)",
