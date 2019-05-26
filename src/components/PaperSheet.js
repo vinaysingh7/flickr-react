@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography";
 
 const styles = theme => ({
   div: {
-    backgroundCcolor: "#FF4136",
     width: "100%",
     height: "30px",
     margin: "auto",
@@ -16,6 +15,7 @@ const styles = theme => ({
     "margin-bottom": "80px",
   },
   paper: {
+    backgroundColor: "#eff2f7",
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,

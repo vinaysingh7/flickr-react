@@ -14,9 +14,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper
   },
   gridList: {
-    width: 1500,
-    height: 1000,
-    transform: 'translateZ(0)',
+    "width": 1000,
+    "height": 1000,
+    "overflowY": 'auto',
   },
   gridListTile: {
     imgFullHeight: "true",
@@ -30,7 +30,7 @@ function ImageGridList(props) {
   return (
     <div className={classes.root}>
       <GridList
-        cellHeight={300}
+        cellHeight={'150'}
         className={classes.gridList}
         cols={4}
         spacing={10}
