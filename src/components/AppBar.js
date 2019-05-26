@@ -11,30 +11,38 @@ import SvgIcon from "@material-ui/core/SvgIcon";
 import flickrSVG from "./../Flickr_wordmark.svg";
 import Card from './Card';
 import searchImage from './../images/2734592986_f5bfb480cb.jpg'
+import Divider from '@material-ui/core/Divider';
 
 
 
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
-    backgroundColor: "#"
   },
   appBar: {
     backgroundColor: "#eff2f7",
-    top: 0
+    // alignItems: 'left',
+    // align: 'center',
+    // maxWidth: '90%',
+    // marginLeft: "auto",
+    // marginRight: "auto",
+    // top: 0
     // alignItems: 'center',
+  },
+  toolbar: {
+    backgroundColor: "#000000",
   },
   typography: {
     paddingTop: "0px",
     color: "#000000",
     align: "right",
-    alignItems: "center"
+    justify: "center"
     // alignContent: "center",
     // alignItems: "center",
     // justify: "center",
   },
   button: {
-    margin: theme.spacing(1),
+    marginLeft: theme.spacing(5),
     flex: 1,
     align: "right",
     alignItems: "right",
@@ -43,14 +51,17 @@ const useStyles = makeStyles(theme => ({
     justify: "right"
   },
   rightToolbar: {
-    maxWidth: '80%',
-    marginLeft: "auto",
+    // maxWidth: '80%',
+    marginLeft: "30%",
     marginRight: "auto"
   },
   menuButton: {
-    marginRight: 16,
-    marginLeft: -12
-  }
+    marginLeft: theme.spacing(20),
+
+  },
+  div: {
+    paddingTop: "10px",
+  },
 }));
 function SimpleAppBar(props) {
   const classes = useStyles();
@@ -58,21 +69,25 @@ function SimpleAppBar(props) {
     props.history.push("/");
   };
   return (
-    <AppBar position="fixed" className={ classes.appBar }>
+    <div className={classes.root}>
+    <AppBar position="static" className={ classes.appBar }>
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/icon?family=Material+Icons"
       />
-      <Toolbar>
-        <IconButton className={classes.menuButton} aria-label="Home">
+      <Toolbar className={classes.toolbar}>
+        <IconButton className={classes.menuButton} aria-label="Home" onClick={handleClick}>
           <img src={flickrSVG} width="70px" height="50px" />
         </IconButton>
         <Typography variant="h6" className={classes.rightToolbar}>
           {props.text}
         </Typography>
       </Toolbar>
-      <Card image={searchImage} className={ classes.card } />
+      <div className={classes.div} / >
+      <Card image={searchImage} className={ classes.menuButton } />
+      <div className={classes.div} / >
     </AppBar>
+    </div>
   );
 }
 

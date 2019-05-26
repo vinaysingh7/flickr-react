@@ -14,8 +14,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper
   },
   gridList: {
-    "width": 1000,
-    "height": 1000,
+    "width": "80%",
+    "height": "80%",
     "overflowY": 'auto',
   },
   gridListTile: {

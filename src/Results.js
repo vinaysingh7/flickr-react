@@ -12,8 +12,8 @@ import PropTypes from "prop-types";
 
 const styles = theme => ({
   container: {
-    paddingLeft: "10px",
-    paddingRight: "10px",
+    paddingLeft: "0px",
+    paddingRight: "0px",
     // display: 'flex',
     // flexWrap: 'wrap',
     // padding: "10px",
@@ -27,7 +27,10 @@ const styles = theme => ({
   }, 
   card: {
     paddingTop: "550px"
-  }, toolbar: theme.mixins.toolbar,
+  }, 
+  toolbar: {
+    paddingTop: "20px"
+  }
 });
 class Results extends Component {
 
@@ -38,7 +41,7 @@ class Results extends Component {
       <React.Fragment>
         <CssBaseline />
         <Container maxWidth className={ classes.container }>
-          <AppBar text={"Results"} />
+          <AppBar text={"Similar Images"} />
           <div className={classes.toolbar}>
           {/* <Card image={searchImage} className={ classes.card } /> */}
           <ImageGridList images={this.props.location.state.similarImagesList} />            
