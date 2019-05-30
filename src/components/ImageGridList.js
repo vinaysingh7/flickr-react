@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
 import GridList from "@material-ui/core/GridList";
 import GridListTile from "@material-ui/core/GridListTile";
-// import tileData from './tileData';
+import ImageRemoved from './image-removed.gif'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -14,9 +14,9 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper
   },
   gridList: {
-    "width": "80%",
-    "height": "80%",
-    "overflowY": 'auto',
+    width: "80%",
+    height: "80%",
+    overflowY: "auto"
   },
   gridListTile: {
     imgFullHeight: "true",
@@ -25,19 +25,26 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function ImageGridList(props) {
+
   const classes = useStyles();
-  console.log(props.images);
   return (
     <div className={classes.root}>
       <GridList
-        cellHeight={'150'}
+        cellHeight={"150"}
         className={classes.gridList}
         cols={4}
         spacing={10}
       >
         {props.images.map(tile => (
           <GridListTile key={tile} cols={1} className={classes.gridListTile}>
-            <img src={tile} alt="" />
+            <img
+              src={tile}
+              alt=""
+              onError={e => {
+                e.target.src =
+                  ImageRemoved; // some replacement image
+              }}
+            />
           </GridListTile>
         ))}
       </GridList>
